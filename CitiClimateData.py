@@ -6,7 +6,7 @@ data.columns=["City","Lat","Long","TempMin","TempColdest","AvgAnnual","TempWarme
 data["TempMin"] = pd.to_numeric(data["TempMin"])
 data = data.apply(pd.to_numeric,errors='ignore')
 for x in ["TempMin","TempColdest","AvgAnnual"]:
-    data[x] = data[x].str.replace('−','-')
+    data[x] = data[x].str.replace('−','-') """почему он не парсит при замене?"""
 
 print(data.dtypes)
 
